@@ -56,7 +56,7 @@ func generateToken() {
 	tokenGeneratorOne := TokenGenerator{SecretKey: "your__key"}
 	// Generate a token
 	token := tokenGenerator.GenerateToken()
-
+	tokenOne := tokenGeneratorOne.GenerateToken()
 	// Create a sample request payload
 	requestBody := map[string]interface{}{
 		"key": "value",
