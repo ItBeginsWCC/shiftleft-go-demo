@@ -1,4 +1,4 @@
-# on: [push]
+# on: This [push]
 on:
   pull_request:
 name: Analysis Shifleft
