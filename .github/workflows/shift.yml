@@ -38,7 +38,7 @@ jobs:
       - name: Copy ShiftLeft Config
         run: |
           # Copy the shiftleft.yml file to the root directory
-          cp shiftleft.yml $GITHUB_WORKSPACE/
+          cp shiftleft.yml ItBeginsWCC/shiftleft-go-demo/
 
       - name: Break The Build Analysis Action
         uses: ItBeginsWCC/Break-The-Build@v3.6
