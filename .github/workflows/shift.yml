@@ -33,6 +33,7 @@ jobs:
 
       - name: Show yml file
         run: |
+          find -name shiftleft.yml
           cat shiftleft.yml
 
       - name: Copy ShiftLeft Config
