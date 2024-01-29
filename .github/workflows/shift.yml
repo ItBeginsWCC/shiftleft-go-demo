@@ -33,4 +33,4 @@ jobs:
           app-name: 'shiftleft-go-demo'
           break-the-build: 'Y'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          shiftleft-config: ${{ github.workspace }}/shiftleft.yml
+          shiftleft-config: 'ItBeginsWCC/Break-The-Build/shiftleft.yml'
