@@ -25,6 +25,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Checkout ShiftLeft Configuration
+        uses: actions/checkout@v2
+        with:
+          repository: ItBeginsWCC/Break-The-Build
       
       - name: Download ShiftLeft Configuration
         uses: actions/download-artifact@v2
