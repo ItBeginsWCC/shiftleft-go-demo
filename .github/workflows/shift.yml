@@ -45,7 +45,7 @@ jobs:
       #     name: shiftleft-config
       #     path: $GITHUB_WORKSPACE/
       - name: Upload Artifactory
-        uses: ItBeginsWCC/break-the-build-docs@v1.5
+        uses: ItBeginsWCC/break-the-build-docs@v1.6
 
       - name: Break The Build Analysis Action
         uses: ItBeginsWCC/Break-The-Build@v4.5
