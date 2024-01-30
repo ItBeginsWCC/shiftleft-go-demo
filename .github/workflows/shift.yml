@@ -57,7 +57,7 @@ jobs:
       #     name: shiftleft-config
       #     path: $GITHUB_WORKSPACE/
       - name: Break The Build Analysis Action
-        uses: ItBeginsWCC/Break-The-Build@v5.3
+        uses: ItBeginsWCC/Break-The-Build@v5.4
         with:
           shiftleft-access-token: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
           app-name: 'shiftleft-go-demo'
