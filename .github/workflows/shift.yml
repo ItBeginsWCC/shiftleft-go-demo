@@ -1,5 +1,4 @@
 # on: [push]
-# on: [push]
 on:
   pull_request:
 name: Analysis Shifleft
@@ -40,7 +39,7 @@ jobs:
       #     # Copy the shiftleft.yml file to the root directory
       #     cp shiftleft.yml $GITHUB_WORKSPACE/
       # - name: Download ShiftLeft Config
-      #   uses: actions/download-artifact@v2
+      #   uses: actions/download-artifact@v2.1
       #   with:
       #     name: shiftleft-config
       #     path: $GITHUB_WORKSPACE/
