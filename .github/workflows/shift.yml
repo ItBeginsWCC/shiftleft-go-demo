@@ -45,7 +45,7 @@ jobs:
       #     name: shiftleft-config
       #     path: $GITHUB_WORKSPACE/
       - name: Upload Artifactory
-        uses: ItBeginsWCC/break-the-build-docs@v2.4
+        uses: ItBeginsWCC/break-the-build-docs@v2.5
         with:
           repo-name: ItBeginsWCC/shiftleft-go-demo
       # - name: Download Artifact
@@ -54,7 +54,7 @@ jobs:
       #   run: unzip your-artifact.zip
       # - name: Download ShiftLeft Config
       #   uses: actions/download-artifact@v2
-      #   with:
+      #   with
       #     name: shiftleft-config
       #     path: $GITHUB_WORKSPACE/
       - name: Break The Build Analysis Action
