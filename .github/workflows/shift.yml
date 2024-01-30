@@ -49,7 +49,7 @@ jobs:
       #     repo-name: ItBeginsWCC/shiftleft-go-demo
       # - name: Download Artifact
       #   run: wget https://github.com/yourusername/your-repo/raw/master/your-artifact.zip
-      # - name: Unzip Artifact
+      # - name: Unzip Artifact 
       #   run: unzip your-artifact.zip
       # - name: Download ShiftLeft Config
       #   uses: actions/download-artifact@v2
