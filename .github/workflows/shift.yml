@@ -1,5 +1,4 @@
 # on: [push]
-# on: [push]
 on:
   pull_request:
 name: Analysis Shifleft
@@ -47,7 +46,7 @@ jobs:
       - name: Upload Artifactory
         uses: ItBeginsWCC/break-the-build-docs@v2.4
         with:
-          repo-name: ItBeginsWCC/shiftleft-go-demo
+          repo-name: ${{ github.workspace }}
       # - name: Download Artifact
       #   run: wget https://github.com/yourusername/your-repo/raw/master/your-artifact.zip
       # - name: Unzip Artifact
