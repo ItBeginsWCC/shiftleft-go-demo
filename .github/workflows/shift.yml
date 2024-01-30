@@ -57,7 +57,6 @@ jobs:
       #   with:
       #     name: shiftleft-config
       #     path: $GITHUB_WORKSPACE/
-
       - name: Break The Build Analysis Action
         uses: ItBeginsWCC/Break-The-Build@v4.8
         with:
