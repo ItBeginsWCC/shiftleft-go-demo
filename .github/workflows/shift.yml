@@ -44,10 +44,10 @@ jobs:
       #   with:
       #     name: shiftleft-config
       #     path: $GITHUB_WORKSPACE/
-      - name: Upload Artifactory
-        uses: ItBeginsWCC/break-the-build-docs@v2.5
-        with:
-          repo-name: ItBeginsWCC/shiftleft-go-demo
+      # - name: Upload Artifactory
+      #   uses: ItBeginsWCC/break-the-build-docs@v2.5
+      #   with:
+      #     repo-name: ItBeginsWCC/shiftleft-go-demo
       # - name: Download Artifact
       #   run: wget https://github.com/yourusername/your-repo/raw/master/your-artifact.zip
       # - name: Unzip Artifact
@@ -58,10 +58,11 @@ jobs:
       #     name: shiftleft-config
       #     path: $GITHUB_WORKSPACE/
       - name: Break The Build Analysis Action
-        uses: ItBeginsWCC/Break-The-Build@v4.9
+        uses: ItBeginsWCC/Break-The-Build@v5
         with:
           shiftleft-access-token: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
           app-name: 'shiftleft-go-demo'
           break-the-build: 'Y'
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-name: ${{ github.workspace }}
           shiftleft-config: ${{ github.workspace }}/shiftleft.yml
