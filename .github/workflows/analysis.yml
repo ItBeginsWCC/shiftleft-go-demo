@@ -19,7 +19,7 @@ jobs:
 
   
   artifacts:
-    uses: ItBeginsWCC/Break-The-Build/.github/workflows/main.yml@v5.8
+    uses: ItBeginsWCC/Break-The-Build/.github/workflows/main.yml@v5.9
 
   download-artifacts:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
       #     cat ./.btb/shiftleft.yml
 
       - name: Break The Build Analysis Action
-        uses: ItBeginsWCC/Break-The-Build@v5.8
+        uses: ItBeginsWCC/Break-The-Build@v5.9
         with:
           shiftleft-access-token: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
           app-name: 'shiftleft-go-demo'
