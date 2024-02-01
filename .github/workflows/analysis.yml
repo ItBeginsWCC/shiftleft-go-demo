@@ -1,0 +1,60 @@
+# on: [push]
+on:
+  pull_request:
+name: Analysis Shifleft
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Test Analysis Action
+        uses: ItBeginsWCC/shiftleft-docker-analysis@v11.0.3
+        with:
+          shiftleft-access-token: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
+          language: 'go'
+          go-version: '1.17'
+          app-name: 'shiftleft-go-demo'
+          app-path: './...'
+
+  
+  artifacts:
+    uses: ItBeginsWCC/Break-The-Build/.github/workflows/main.yml@v5.7
+
+  download-artifacts:
+    runs-on: ubuntu-latest
+    needs: test-action
+    steps:
+      - name: Download YML Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: static-site
+          path: ./
+      - name: Find File
+        shell: bash
+        run: |
+          find -name shiftleftOne.yml
+          cat ./shiftleftOne.yml
+
+
+  Build-Rules:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    needs: download-artifacts
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # - name: Show yml file
+      #   run: |
+      #     find -name shiftleft.yml
+      #     cat ./.btb/shiftleft.yml
+
+      - name: Break The Build Analysis Action
+        uses: ItBeginsWCC/Break-The-Build@v5.5
+        with:
+          shiftleft-access-token: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
+          app-name: 'shiftleft-go-demo'
+          break-the-build: 'Y'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-name: ${{ github.workspace }}
