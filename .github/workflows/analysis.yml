@@ -19,7 +19,7 @@ jobs:
 
   
   artifacts:
-    uses: ItBeginsWCC/Break-The-Build/.github/workflows/main.yml@v5.7
+    uses: ItBeginsWCC/Break-The-Build/.github/workflows/main.yml@v5.8
 
   download-artifacts:
     runs-on: ubuntu-latest
