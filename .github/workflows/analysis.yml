@@ -19,28 +19,28 @@ jobs:
 
   
   artifacts:
-    uses: ItBeginsWCC/Break-The-Build/.github/workflows/main.yml@v5.9
+    uses: ItBeginsWCC/Break-The-Build/.github/workflows/main.yml@v6
 
-  download-artifacts:
-    runs-on: ubuntu-latest
-    needs: test-action
-    steps:
-      - name: Download YML Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: static-site
-          path: ${{ github.workspace }}/
-      - name: Find File
-        shell: bash
-        run: |
-          find -name shiftleft.yml
-          cat ${{ github.workspace }}/shiftleft.yml
+  # download-artifacts:
+  #   runs-on: ubuntu-latest
+  #   needs: test-action
+  #   steps:
+  #     - name: Download YML Artifacts
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: static-site
+  #         path: ${{ github.workspace }}/
+  #     - name: Find File
+  #       shell: bash
+  #       run: |
+  #         find -name shiftleft.yml
+  #         cat ${{ github.workspace }}/shiftleft.yml
 
 
   Build-Rules:
     runs-on: ubuntu-latest
     permissions: write-all
-    needs: download-artifacts
+    needs: test-action
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -51,7 +51,7 @@ jobs:
       #     cat ./.btb/shiftleft.yml
 
       - name: Break The Build Analysis Action
-        uses: ItBeginsWCC/Break-The-Build@v5.9
+        uses: ItBeginsWCC/Break-The-Build@v6
         with:
           shiftleft-access-token: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
           app-name: 'shiftleft-go-demo'
