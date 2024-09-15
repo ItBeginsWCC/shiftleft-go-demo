@@ -1,4 +1,4 @@
-# on: [push]
+# on: [pushB]
 on:
   workflow_dispatch:
   # pull_request:
